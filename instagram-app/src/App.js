@@ -15,11 +15,19 @@ class App extends React.Component {
   }
     
     render(){
-     //console.log(this.state.dataArray)
+     //console.log('state: ', this.state.dataArray)
       return (
         <div className="App">
           <SearchBar />
-          <PostContainer dataArray = {this.state.dataArray} />
+          {this.state.dataArray.map(post => {
+                return(
+                    <div key = {post.id}>
+                        <p>START</p>
+                        <PostContainer post = {post}/>
+                        <p>END</p>
+                    </div>
+                )
+            })}
         </div>
       );
     }
