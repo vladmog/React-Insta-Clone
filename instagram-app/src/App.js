@@ -9,27 +9,42 @@ class App extends React.Component {
   constructor(){
     super();
     this.state = {
-      dataArray: dummyData
+      dataArray: []
     }
   }
+
+
+  
+  componentDidMount(){
+    this.setState({
+      dataArray: dummyData
+    })
+  }
+
+  searchBarFilter = searchTerm => {
+    const newFilteredArray = this.state.dataArray.filter(
+      postObject => postObject.username === searchTerm
+    );
+    this.setState({
+      dataArray: newFilteredArray
+    });
+  };
     
-    render(){
-     //console.log('state: ', this.state.dataArray)
-      return (
-        <div className="App">
-          <SearchBar />
-          {this.state.dataArray.map(post => {
-                return(
-                    <div key = {post.id}>
-                        <p>START</p>
-                        <PostContainer post = {post}/>
-                        <p>END</p>
-                    </div>
-                )
-            })}
-        </div>
-      );
-    }
+  render(){
+    //console.log('state: ', this.state.dataArray)
+    return (
+      <div className="App">
+        <SearchBar searchBarFilter = {this.searchBarFilter} />
+        {this.state.dataArray.map(post => {
+              return(
+                  <div key = {post.id}>
+                      <PostContainer post = {post}/>
+                  </div>
+              )
+          })}
+      </div>
+    );
+  }
   
 }
 

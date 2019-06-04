@@ -16,13 +16,20 @@ const PostContainer = props => {
             </div>
             <img className = "image" src = {props.post.imageUrl} alt = "" />
             <span className = "likes">{props.post.likes} likes</span>
-            {props.post.comments.map(comment => {
+            {/* {props.post.comments.map(comment => {
                 return (
                     <div key = {comment.id}>
                         <CommentSection comment = {comment}/>
                     </div>
                 )
-            })}
+            })} */}
+            <CommentSection commentsArray = {props.post.comments} />
+            <form>
+                <input placeholder = "Add comment...">
+                </input>
+                <button>
+                </button>
+            </form>
         </div>
     )
 }
