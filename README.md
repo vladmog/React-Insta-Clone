@@ -53,7 +53,7 @@ Your search bar header should look something like this:
 ![search bar](/assets/ig_search_bar.png)
 
 ---
-
+ 
 Your post container should look something like this:
 ![insta post](/assets/ig_post.png)
 
