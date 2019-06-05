@@ -2,17 +2,6 @@ import React from 'react';
 import './SearchBar.css';
 
 
-
-
-
-// const SearchBar = props => {
-//     return (
-//         <div>
-//             <h1>Instagram</h1>
-//         </div>
-//     )
-// }
-
 class SearchBar extends React.Component {
     state = {
       searchTerm: ""
@@ -20,7 +9,7 @@ class SearchBar extends React.Component {
     handleChange = e => {
       e.preventDefault();
       this.setState({
-        searchTerm: e.target.value
+        [e.target.name]: e.target.value
       });
     };
 
@@ -40,14 +29,13 @@ class SearchBar extends React.Component {
                     <div className = "vLine"></div>
                     <h1>Instagram</h1>
                 </div>
+
                 <form className = "input" onSubmit={this.searchBarFilter} >
-                    
                     <input
                         onChange={this.handleChange}
                         placeholder="Search"
-                        name="search-input"
+                        name="searchTerm"
                         value={this.state.searchTerm}
-                        
                     />
                 </form>
 
@@ -60,9 +48,6 @@ class SearchBar extends React.Component {
         )
     }
 }
-
-
-
 
 export default SearchBar;
 

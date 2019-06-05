@@ -13,8 +13,6 @@ class App extends React.Component {
     }
   }
 
-
-  
   componentDidMount(){
     this.setState({
       dataArray: dummyData
@@ -22,12 +20,18 @@ class App extends React.Component {
   }
 
   searchBarFilter = searchTerm => {
-    const newFilteredArray = this.state.dataArray.filter(
-      postObject => postObject.username === searchTerm
-    );
-    this.setState({
-      dataArray: newFilteredArray
-    });
+    if (searchTerm === ""){
+      this.setState({
+        dataArray: dummyData
+      })
+    }else{
+      const newFilteredArray = this.state.dataArray.filter(
+        postObject => postObject.username === searchTerm
+      );
+      this.setState({
+        dataArray: newFilteredArray
+      });
+    }
   };
     
   render(){

@@ -4,34 +4,34 @@ import PropTypes from 'prop-types';
 import './PostContainer.css'
 
 
-const PostContainer = props => {
+class PostContainer extends React.Component {
     // console.log('postcontainer props: ', props)
-    return (
-        <div className = "post">
-            <div className = "poster">
-                <div className = "thumbHolder">
-                    <img className = "postUserThumb" src = {props.post.thumbnailUrl} alt = "" />
-                </div>
-                <span className = "postUserName">{props.post.username}</span>
-            </div>
-            <img className = "image" src = {props.post.imageUrl} alt = "" />
-            <span className = "likes">{props.post.likes} likes</span>
-            {/* {props.post.comments.map(comment => {
-                return (
-                    <div key = {comment.id}>
-                        <CommentSection comment = {comment}/>
+    state= {
+
+    };
+    render(){
+        return (
+            <div className = "post">
+                <div className = "poster">
+                    <div className = "thumbHolder">
+                        <img className = "postUserThumb" src = {this.props.post.thumbnailUrl} alt = "" />
                     </div>
-                )
-            })} */}
-            <CommentSection commentsArray = {props.post.comments} />
-            <form>
-                <input placeholder = "Add comment...">
-                </input>
-                <button>
-                </button>
-            </form>
-        </div>
-    )
+                    <span className = "postUserName">{this.props.post.username}</span>
+                </div>
+                <img className = "image" src = {this.props.post.imageUrl} alt = "" />
+                <span className = "likes">{this.props.post.likes} likes</span>
+                {/* {props.post.comments.map(comment => {
+                    return (
+                        <div key = {comment.id}>
+                            <CommentSection comment = {comment}/>
+                        </div>
+                    )
+                })} */}
+                <CommentSection commentsArray = {this.props.post.comments} />
+                
+            </div>
+        )
+    }
 }
 
 PostContainer.propTypes = {

@@ -6,7 +6,6 @@ const Comment = props => {
     // console.log('commentsection props: ', props)
     //prop: commentsArray
     return (
-
         <div className = "comment">
             <span className = "commentUserName">{props.comment.username}</span>
             <span className = "commentText">{props.comment.text}</span>
