@@ -54,3 +54,13 @@ button {
     width: 5%;
     height: 100%;
 }
+
+.postActions {
+    height: 30px;
+    width: 100px;
+}
+
+.postActionBtn {
+    height: 100%;
+    object-fit: contain;
+}

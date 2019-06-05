@@ -1,6 +1,6 @@
 import React from 'react';
 import './SearchBar.css';
-
+import PropTypes from 'prop-types';
 
 class SearchBar extends React.Component {
     state = {
@@ -49,35 +49,10 @@ class SearchBar extends React.Component {
     }
 }
 
+SearchBar.propTypes = {
+  searchBarFilter: PropTypes.func.isRequired
+}
+
 export default SearchBar;
 
 
-//########################################################################
-
-// class App extends React.Component {
-//     constructor(){
-//       super();
-//       this.state = {
-//         dataArray: dummyData
-//       }
-//     }
-      
-//       render(){
-//        //console.log('state: ', this.state.dataArray)
-//         return (
-//           <div className="App">
-//             <SearchBar />
-//             {this.state.dataArray.map(post => {
-//                   return(
-//                       <div key = {post.id}>
-//                           <PostContainer post = {post}/>
-//                       </div>
-//                   )
-//               })}
-//           </div>
-//         );
-//       }
-    
-//   }
-  
-//   export default App;

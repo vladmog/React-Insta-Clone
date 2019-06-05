@@ -4,11 +4,38 @@ import PropTypes from 'prop-types';
 import './PostContainer.css'
 
 
+
+
 class PostContainer extends React.Component {
     // console.log('postcontainer props: ', props)
     state= {
-
+        likes: 0,
+        liked: false
     };
+
+    componentDidMount(){
+        this.setState({
+            likes: this.props.post.likes
+        })
+    }
+
+    likeIncrement = e => {
+        e.preventDefault()
+        if (this.state.liked === false){
+            this.setState(prevState =>({
+                likes: prevState.likes + 1,
+                liked: true
+            }))
+        }else{
+            this.setState(prevState => ({
+                likes: prevState.likes - 1,
+                liked: false
+            }))
+        }
+
+    }
+
+
     render(){
         return (
             <div className = "post">
@@ -19,14 +46,16 @@ class PostContainer extends React.Component {
                     <span className = "postUserName">{this.props.post.username}</span>
                 </div>
                 <img className = "image" src = {this.props.post.imageUrl} alt = "" />
-                <span className = "likes">{this.props.post.likes} likes</span>
-                {/* {props.post.comments.map(comment => {
-                    return (
-                        <div key = {comment.id}>
-                            <CommentSection comment = {comment}/>
-                        </div>
-                    )
-                })} */}
+                <div className = "postActions">
+                    <img 
+                        className = "postActionBtn" 
+                        src={require('./like.jpg')} 
+                        alt = ""
+                        onClick = {this.likeIncrement}
+                     />
+                    <img className = "postActionBtn" src={require('./comment.jpg')} alt = "" />
+                </div>
+                <span className = "likes">{this.state.likes} likes</span>
                 <CommentSection commentsArray = {this.props.post.comments} />
                 
             </div>

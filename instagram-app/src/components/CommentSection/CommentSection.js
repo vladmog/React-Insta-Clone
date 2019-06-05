@@ -56,35 +56,16 @@ class CommentSection extends React.Component {
                         placeholder = {this.state.commentInput}
                         onChange = {this.handleChange}
                     />
-                    <button></button>
+                   
                 </form>
             </div>
         )
     }
 }
 
-
-// THIS WORKS
-// class CommentSection extends React.Component {
-//     // console.log('commentsection props: ', props)
-//     //prop: commentsArray
-//     state = {
-
-//     }
-//     render(){
-//         return (
-//             <div>
-//                 {this.props.commentsArray.map(comment => {
-//                     return (
-//                         <div key = {comment.id}>
-//                             <Comment comment = {comment}/>
-//                         </div>
-//                     )
-//                 })} 
-//             </div>
-//         )
-//     }
-// }
+CommentSection.propTypes = {
+    commentsArray: PropTypes.arrayOf(PropTypes.object)
+}
 
 
 
