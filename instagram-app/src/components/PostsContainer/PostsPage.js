@@ -19,10 +19,10 @@ class PostsPage extends React.Component {
 
 export default PostsPage;
 
-{this.state.dataArray.map(post => {
-    return(
-        <div key = {post.id}>
-            <PostsContainer post = {post}/>
-        </div>
-    )
-})}
+// {this.state.dataArray.map(post => {
+//     return(
+//         <div key = {post.id}>
+//             <PostsContainer post = {post}/>
+//         </div>
+//     )
+// })}

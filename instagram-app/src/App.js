@@ -2,11 +2,11 @@ import React from 'react';
 import './App.css';
 import dummyData from './dummy-data';
 import SearchBar from './components/SearchBar/SearchBar';
-import PostContainer from './components/PostsContainer/PostsContainer';
 import PostsPage from './components/PostsContainer/PostsPage';
 import withAuthenticate from './components/authentication/withAuthenticate';
+import Login from './components/Login/Login';
 
-const ComponentFromWithAuthenticate = withAuthenticate(PostsPage);
+const ComponentFromWithAuthenticate = withAuthenticate(PostsPage)(Login);
 
 
 class App extends React.Component {

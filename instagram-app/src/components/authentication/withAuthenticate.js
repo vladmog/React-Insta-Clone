@@ -1,15 +1,34 @@
 import React from 'react';
 
-console.log(posts)
-const withAuthenticate = (Domponent) => {
-    class Domponent extends React.Component {
+
+const withAuthenticate = (PostsPage) => (LoginPage) => 
+//  console.log(props)
+    class extends React.Component {
+        state = {
+            loggedIn: false
+        }
+
+        componentDidMount(){
+            if (localStorage.getItem("username") && localStorage.getItem("password")){
+                this.setState({
+                    loggedIn: true
+                })
+            }
+        }
+
         render(){
-            return(
-             <Domponent dataArray = {posts.dataArray} />
-            )
+            if (this.state.loggedIn === true){
+                return(
+                    <PostsPage dataArray = {this.props.dataArray} />
+                )
+            }else{
+                return(
+                    <LoginPage />
+                )
+            }
         }
     }
-}
+
 
 
 
