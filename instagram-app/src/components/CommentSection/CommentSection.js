@@ -30,7 +30,7 @@ class CommentSection extends React.Component {
         this.setState(prevState => ({
             commentsArray: [...prevState.commentsArray,
                 {id: prevState.commentsArray.length + 1,
-                username: "lightcatch",
+                username: localStorage.getItem("username"),
                 text: prevState.commentInput}],
             commentInput: "Add comment..."
         }))

@@ -1,4 +1,7 @@
 import React from "react";
+import {Button, Div, Input, Img, Form} from '../Styles/LoginStyles.js';
+
+
 
 class Login extends React.Component {
     state = {
@@ -20,23 +23,24 @@ class Login extends React.Component {
 
     render() {
         return (
-            <div>
-                <form onSubmit = {this.login}>
-                    <input 
+            <Div>
+                <Img src={require('./Nokia.png')} alt = "" />
+                <Form onSubmit = {this.login}>
+                    <Input 
                         name = "username" 
                         value = {this.state.username}
                         placeholder = "username"
                         onChange = {this.handleChange}
                     />
-                    <input
+                    <Input
                         name = "password" 
                         value = {this.state.password}
                         placeholder = "password"
                         onChange = {this.handleChange}
                     />
-                    <button type = "submit">Login</button>
-                </form>
-            </div>
+                    <Button type = "submit">Login</Button>
+                </Form>
+            </Div>
         )
     }
 }

@@ -1,6 +1,58 @@
 import React from 'react';
-import './SearchBar.css';
 import PropTypes from 'prop-types';
+import styled from 'styled-components'
+
+
+//#########################################################################
+
+const Header = styled.div `
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+`
+
+const Input = styled.form `
+  width: 120px;
+  text-align: center;
+`
+
+const H1 = styled.h1 `
+  font-family: 'Grand Hotel', cursive;
+  margin: 0px;
+`
+
+const Logos = styled.div `
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+  width: 20%;
+`
+
+const Logo = styled.img `
+  width: 30px;
+  object-fit: contain;
+`
+
+const LogoImage = styled(Logo)``
+
+const VLine = styled.div `
+  width: 1px;
+  height: 30px;
+  background-color: grey;
+`
+const LogoHeader = styled.div `
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+  width: 30%;
+`
+
+//#########################################################################
 
 class SearchBar extends React.Component {
     state = {
@@ -23,28 +75,28 @@ class SearchBar extends React.Component {
   
     render(){
         return (
-            <div className = "searchBar">
-                <div className = "branding">
-                    <img className = "logo" src={require('./glyph.png')} alt = "" />
-                    <div className = "vLine"></div>
-                    <h1>Instagram</h1>
-                </div>
+            <Header>
+                <LogoHeader>
+                    <LogoImage src={require('./glyph.png')} alt = "" />
+                    <VLine></VLine>
+                    <H1>Instagram</H1>
+                </LogoHeader>
 
-                <form className = "input" onSubmit={this.searchBarFilter} >
+                <Input onSubmit={this.searchBarFilter} >
                     <input
                         onChange={this.handleChange}
                         placeholder="Search"
                         name="searchTerm"
                         value={this.state.searchTerm}
                     />
-                </form>
+                </Input>
 
-                <div className = "logos">
-                    <img className = "logo" src={require('./explore.jpg')} alt = ""/>
-                    <img className = "logo" src={require('./like.jpg')} alt = "" />
-                    <img className = "logo" src={require('./user.jpg')} alt = "" />
-                </div>
-            </div>
+                <Logos>
+                    <Logo src={require('./explore.jpg')} alt = ""/>
+                    <Logo src={require('./like.jpg')} alt = "" />
+                    <Logo src={require('./user.jpg')} alt = "" />
+                </Logos>
+            </Header>
         )
     }
 }

@@ -5,6 +5,7 @@ import SearchBar from './components/SearchBar/SearchBar';
 import PostsPage from './components/PostsContainer/PostsPage';
 import withAuthenticate from './components/authentication/withAuthenticate';
 import Login from './components/Login/Login';
+import styled from 'styled-components'
 
 const ComponentFromWithAuthenticate = withAuthenticate(PostsPage)(Login);
 
@@ -39,7 +40,6 @@ class App extends React.Component {
   };
     
   render(){
-    //console.log('state: ', this.state.dataArray)
     return (
       <div className="App">
         <SearchBar searchBarFilter = {this.searchBarFilter} />

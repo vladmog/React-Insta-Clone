@@ -3,6 +3,12 @@ import CommentSection from '../CommentSection/CommentSection'
 import PropTypes from 'prop-types';
 import './PostContainer.css'
 
+//##################################################################################
+
+// const UserThumbnail = styled.img ``
+// const Username = styled.span ``
+
+//##################################################################################
 
 
 
