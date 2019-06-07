@@ -1,0 +1,66 @@
+.post {
+    /* border: solid green 1px; */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.poster {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.thumbHolder {
+    width: 20%;
+}
+
+.postUserThumb {
+    width: 100%;
+    border-radius: 50%;
+    object-fit: contain;
+}
+
+.postUserName {
+    padding-left: 10px;
+}
+
+.image {
+    object-fit: contain;
+    width: 100%;
+}
+
+.likes {
+    font-weight: bolder;
+    margin-bottom: 10px;
+}
+
+form {
+    width: 100%;
+    height: 30px;
+}
+
+input {
+    width: 94%;
+    height: 100%;
+    border: none;
+}
+
+button {
+    width: 5%;
+    height: 100%;
+}
+
+.postActions {
+    height: 30px;
+    width: 100px;
+}
+
+.postActionBtn {
+    height: 100%;
+    object-fit: contain;
+}

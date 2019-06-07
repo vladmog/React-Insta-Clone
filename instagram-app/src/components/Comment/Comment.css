@@ -1,0 +1,9 @@
+.comment {
+    /* border: solid purple 1px; */
+}
+
+.commentUserName {
+    font-weight: bold;
+    padding-right: 10px;
+}
+
